@@ -1,5 +1,3 @@
-[submodule "Attention-MIL-WSI-Classification"]
-	path = Attention-MIL-WSI-Classification
-	url = https://github.com/emnzn/Attention-MIL-WSI-Classification.git
 [submodule "ViT-Based-WSI-Classification"]
+	path = ViT-Based-WSI-Classification
 	url = https://github.com/emnzn/ViT-Based-WSI-Classification.git
