@@ -1,1 +1,1 @@
-# ViT-WSI-Deep-Learning
+# PathPredict
