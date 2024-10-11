@@ -1,3 +1,6 @@
 [submodule "ViT-Based-WSI-Classification"]
 	path = ViT-Based-WSI-Classification
 	url = https://github.com/emnzn/ViT-Based-WSI-Classification.git
+[submodule "WSI-Time-To-Event-Regression/"]
+	path = WSI-Time-To-Event-Regression
+	url = https://github.com/emnzn/WSI-Time-To-Event-Regression.git
