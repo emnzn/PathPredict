@@ -19,6 +19,9 @@ class PatchingDataset(Dataset):
     id_dir: str
         The directory containing the patches (this would be the patient ID).
 
+    return_img_path: bool
+        Whether to return the image path for downstream tasks.
+
     Returns
     -------
     img: torch.Tensor
@@ -28,9 +31,11 @@ class PatchingDataset(Dataset):
         The coordinates of the patch containing its coordinates.
     """
 
-    def __init__(self, id_dir: str) -> None:
+    def __init__(self, id_dir: str, return_img_path: bool = False) -> None:
         self.id_dir = id_dir
         self.patches = os.listdir(id_dir)
+
+        self.return_img_path = return_img_path
 
     def __len__(self):
         return len(self.patches)
@@ -54,7 +59,11 @@ class PatchingDataset(Dataset):
 
         img = preprocess(img)
         coords = Path(img_name).stem
-
-        return img, coords
+        
+        if self.return_img_path: 
+            return img, coords, img_path
+        
+        else:
+            return img, coords
 
 

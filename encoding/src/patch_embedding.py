@@ -6,7 +6,7 @@ import timm
 import torch
 from tqdm import tqdm
 from dotenv import load_dotenv
-from torch.utils.data.dataloader import DataLoader
+from torch.utils.data import DataLoader
 
 from utils import (
     PatchingDataset, 
@@ -43,7 +43,7 @@ def embed_patches(
 
 def main():
     load_dotenv(os.path.join("..", ".env"))
-    hf_token = os.getenv('HF_TOKEN')
+    hf_token = os.getenv("HF_TOKEN")
 
     arg_dir = os.path.join("configs", "embed-config.yaml")
     args = get_args(arg_dir)
