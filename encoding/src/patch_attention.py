@@ -80,8 +80,7 @@ def main():
     os.makedirs(dest_dir, exist_ok=True)
     selected_ids = list(map(str, [patient_id for patient_id in args["selected_patients"]]))
 
-    # device = "cuda" if torch.cuda.is_available() else "cpu"
-    device = "mps"
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     model = get_model(args["model"], device, hf_token).to(device)
 
     for i, patient_id in enumerate(selected_ids):
